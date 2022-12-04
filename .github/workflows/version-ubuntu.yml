@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 0 * * *'
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,13 +15,17 @@ jobs:
           list=("MEGAsyncSetup32" "MEGAsyncSetup64" "MEGAcmdSetup32" "MEGAcmdSetup64")
           for installer in "${list[@]}"
           do
-             7z l ${installer}.exe | grep ProductVersion | grep -P -o -e "\d.+" > ${installer}.txt
+            7z l ${installer}.exe | grep ProductVersion | grep -P -o -e "\d.+" > ${installer}.txt
           done
           rm -rf *.exe
+
       - name: Commit and push changes
         run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add *.txt
-          git commit -a -m "Update installer versions."
-          git push origin
+          FILES_CHANGED=$(git diff --staged --name-status)
+          if [[ -n ${FILES_CHANGED} ]]; then
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
+            git add *.txt
+            git commit -a -m "Update installer versions."
+            git push origin
+          fi
