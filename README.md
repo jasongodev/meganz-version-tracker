@@ -1,5 +1,7 @@
 # Version Tracker for MEGAsync and MEGAcmd Windows Installers
 
+[![Version Tracker](https://github.com/jasongodev/meganz-version-tracker/actions/workflows/version.yml/badge.svg)](https://github.com/jasongodev/meganz-version-tracker/actions/workflows/version.yml)
+
 MEGA.nz is a cross-platform cloud storage solution. On Windows platforms it has 2 programs - the MEGAsync for desktop and MEGAcmd for command line interface.
 
 Command line installers like Scoop can install these programs. However, MEGA's website and GitHub repository does not publish accurate version numbers of their programs.
