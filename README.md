@@ -7,3 +7,8 @@ Command line installers like Scoop can install these programs. However, MEGA's w
 The only workaround is to download the installers and check the version numbers.
 
 This repository automates this procedure using GitHub Workflow and makes the version numbers publicly available.
+
+## Disclaimer
+- I am not employed, not hired, has not received any funds, nor connected with MEGA, Scoop, or Chocolatey. I do this voluntarily.
+- I do use MEGA as a paid subscriber.
+- I sponsor Scoop via GitHub.
