@@ -27,6 +27,9 @@ jobs:
       - name: Update version.txt
         run: Write-Output (Get-Item "latest.exe").VersionInfo.ProductVersion > version.txt
         
+      - name: Clean-up files
+        run: Remove-Item "latest.exe"
+        
       - name: Commit and push changes
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
