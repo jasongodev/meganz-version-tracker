@@ -1,8 +1,6 @@
-name: Version Tracker
+name: Version Tracker (runs-on windows-latest)
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
 jobs:
   build:
     runs-on: windows-latest
