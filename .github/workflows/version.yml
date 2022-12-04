@@ -28,7 +28,6 @@ jobs:
         run: Write-Output (Get-Item "latest.exe").VersionInfo.ProductVersion > version.txt
         
       - name: Commit and push changes
-        uses: devops-infra/action-commit-push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: Update version.txt
+        run: |
+          git commit -a -m "Update version.txt"
+          git push origin
