@@ -30,4 +30,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git commit -a -m "Update installer versions."
             git push origin
+            echo -e "\n[INFO] Files changed:\n${FILES_CHANGED}"
+          else
+            echo -e "\n[INFO] No files changed."
           fi
