@@ -1,4 +1,4 @@
-name: Track MEGA Installers version number
+name: Version Tracker
 on:
   workflow_dispatch:
   schedule:
