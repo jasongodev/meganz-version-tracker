@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Install p7zip-full
-        run: sudo apt install p7zip-full aria2 -y
 
       - name: Download MEGA Installers
         run: |
@@ -18,7 +15,7 @@ jobs:
           list=("MEGAsyncSetup32", "MEGAsyncSetup64", "MEGAcmdSetup32", "MEGAcmdSetup64")
           for installer in "${list[@]}"
           do
-             7z l ${installer}.exe | grep ProductVersion | grep -P -o -e "\d.+" > ${installer}.txt"
+             7z l ${installer}.exe | grep ProductVersion | grep -P -o -e "\d.+" > ${installer}.txt
           done
           rm -rf *.exe
       - name: Commit and push changes
