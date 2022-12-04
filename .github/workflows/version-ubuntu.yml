@@ -12,7 +12,7 @@ jobs:
       - name: Download MEGA Installers
         run: |
           aria2c -i installers.txt
-          list=("MEGAsyncSetup32", "MEGAsyncSetup64", "MEGAcmdSetup32", "MEGAcmdSetup64")
+          list=("MEGAsyncSetup32" "MEGAsyncSetup64" "MEGAcmdSetup32" "MEGAcmdSetup64")
           for installer in "${list[@]}"
           do
              7z l ${installer}.exe | grep ProductVersion | grep -P -o -e "\d.+" > ${installer}.txt
