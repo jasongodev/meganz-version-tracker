@@ -1,4 +1,6 @@
-# Version Tracker for MEGAsync and MEGAcmd Windows Installers
+# [DEPRECATED] Version Tracker for MEGAsync and MEGAcmd Windows Installers
+
+Mega's Github repository now correctly publishes version numbers for Windows releases. This Github Action is not needed any more.
 
 [![Version Tracker](https://github.com/jasongodev/meganz-version-tracker/actions/workflows/version.yml/badge.svg)](https://github.com/jasongodev/meganz-version-tracker/actions/workflows/version.yml)
 
